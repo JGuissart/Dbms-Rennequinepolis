@@ -1,0 +1,11 @@
+INSERT INTO Users (LastName, FirstName, DateOfBirth) VALUES('Guissart', 'Julien', TO_DATE('06/05/1992', 'dd/mm/yyyy'));
+INSERT INTO Users (LastName, FirstName, DateOfBirth) VALUES('Desart', 'Adrien', TO_DATE('24/03/1993', 'dd/mm/yyyy'));
+INSERT INTO Users (LastName, FirstName, DateOfBirth) VALUES('Flohic', 'Erwan', TO_DATE('07/09/1994', 'dd/mm/yyyy'));
+INSERT INTO Users (LastName, FirstName, DateOfBirth) VALUES('Boclinville', 'Thibault', TO_DATE('02/06/1994', 'dd/mm/yyyy'));
+INSERT INTO Users (LastName, FirstName, DateOfBirth) VALUES('Clotuche', 'Pierre', TO_DATE('15/08/1994', 'dd/mm/yyyy'));
+INSERT INTO Users (LastName, FirstName, DateOfBirth) VALUES('Seel', 'Oceane', TO_DATE('18/11/1994', 'dd/mm/yyyy'));
+INSERT INTO Users (LastName, FirstName, DateOfBirth) VALUES('Krzewski', 'Timon', TO_DATE('30/06/1994', 'dd/mm/yyyy'));
+INSERT INTO Users (LastName, FirstName, DateOfBirth) VALUES('Van der Linden', 'Nicolas', TO_DATE('25/12/1993', 'dd/mm/yyyy'));
+INSERT INTO Users (LastName, FirstName, DateOfBirth) VALUES('Cremades', 'Arnaud', TO_DATE('29/02/1992', 'dd/mm/yyyy'));
+INSERT INTO Users (LastName, FirstName, DateOfBirth) VALUES('Fink', 'Jerome', TO_DATE('27/06/1994', 'dd/mm/yyyy'));
+COMMIT;

@@ -1,0 +1,10 @@
+@D:\InstallRQS\BackupCB\CB\BackupCB_PackageSpecification
+@D:\InstallRQS\BackupCB\CB\BackupCB_PackageBody
+@D:\InstallRQS\BackupCB\CB\Trigger_ReplicationCopie
+@D:\InstallRQS\BackupCB\CB\Trigger_ReplicationCotesAvis
+@D:\InstallRQS\BackupCB\CB\Create_Job
+@D:\InstallRQS\RechFilm\CB\type_array
+@D:\InstallRQS\RechFilm\CB\RechFilm_PackageSpecification
+@D:\InstallRQS\RechFilm\CB\RechFilm_PackageBody
+@D:\InstallRQS\EvalFilm\CB\EvalFilm_PackageSpecification
+@D:\InstallRQS\EvalFilm\CB\EvalFilm_PackageBody

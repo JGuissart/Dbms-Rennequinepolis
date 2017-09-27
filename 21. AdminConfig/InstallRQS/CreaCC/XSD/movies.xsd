@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://xmlns.oracle.com/xdb" xdb:storeVarrayAsTable="true" version="1.0">
+    <xsd:element name='movies' type="movieType" xdb:SQLName="MOVIES"/>
+    <xsd:complexType name="movieType">
+        <xsd:sequence>
+            <xsd:element name="idMovie" type="idMovieType" xdb:SQLName="IDMOVIE" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="title" type="titleType" xdb:SQLName="TITLE" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="originalTitle" type="originaleTitleType" xdb:SQLName="ORIGINAL_TITLE" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="release_date" type="xsd:date" xdb:SQLName="RELEASE_DATE" xdb:SQLType="DATE"/>
+            <xsd:element name="status" type="statusType" xdb:SQLName="STATUT" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="vote_average" type="xsd:float" xdb:SQLName="VOTE_AVERAGE" xdb:SQLType="NUMBER"/>
+            <xsd:element name="vote_count" type="xsd:integer" xdb:SQLName="VOTE_COUNT" xdb:SQLType="NUMBER"/>
+            <xsd:element name="runtime" type="xsd:integer" xdb:SQLName="RUNTIME" xdb:SQLType="NUMBER"/>
+            <xsd:element name="certification" type="certificationType" xdb:SQLName="CERTIFICATION" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="budget" type="xsd:integer" xdb:SQLName="BUDGET" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="revenue" type="xsd:integer" xdb:SQLName="REVENUE" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="homepage" type="homepageType" xdb:SQLName="HOMEPAGE" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="tagline" type="taglineType" xdb:SQLName="TAGLINE" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="overview" type="overviewType" xdb:SQLName="OVERVIEW" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="idPoster" type="xsd:integer" xdb:SQLName="IDPOSTER" xdb:SQLType="NUMBER"/>
+
+            <xsd:element name="genres" type="listGenreType" xdb:SQLName="LIST_GENRE"/>
+            <xsd:element name="productions" type="listProductionType" xdb:SQLName="LIST_PRODUCTIONS"/>
+            <xsd:element name="languages" type="listLanguagesType" xdb:SQLName="LIST_LANGUAGES"/>
+            <xsd:element name="listCountries" type="listCountriesType" xdb:SQLName="LIST_COUNTRIES"/>
+            <xsd:element name="actors" type="listActorsType" xdb:SQLName="LIST_ACTORS"/>
+            <xsd:element name="directors" type="listDirectorsType" xdb:SQLName="LIST_DIRECTORS"/>
+            <xsd:element name="listOpinions" type="listOpinionsType" xdb:SQLName="LIST_OPINIONS"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+        <xsd:complexType name="listGenreType" xdb:SQLType="GENRES_TYPE">
+        <xsd:sequence>
+            <xsd:element name="genre" maxOccurs="unbounded" type="genreType" xdb:SQLName="GENRE" xdb:SQLCollType="GENRES_VRY"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="listProductionType" xdb:SQLType="PRODUCTIONS_TYPE">
+        <xsd:sequence>
+            <xsd:element name="production" maxOccurs="unbounded" type="productionType" xdb:SQLName="PRODUCTION" xdb:SQLCollType="PRODUCTIONS_VRY"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="listLanguagesType" xdb:SQLType="LANGUAGES_TYPE">
+        <xsd:sequence>
+            <xsd:element name="language" maxOccurs="unbounded" type="languageType" xdb:SQLName="LANGUAGE" xdb:SQLCollType="LANGUAGES_VRY"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="listCountriesType" xdb:SQLType="L_COUNTRIES_TYPE">
+        <xsd:sequence>
+            <xsd:element name="country" maxOccurs="unbounded" type="countryType" xdb:SQLName="COUNTRY" xdb:SQLCollType="COUNTRY_VRY"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="listActorsType" xdb:SQLType="ACTORS_TYPE">
+        <xsd:sequence>
+            <xsd:element name="actor" maxOccurs="unbounded" type="actorType" xdb:SQLName="ACTOR" xdb:SQLCollType="ACTORS_VRY"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    
+    <xsd:complexType name="listDirectorsType" xdb:SQLType="DIRECTORS_TYPE">
+        <xsd:sequence>
+            <xsd:element name="director" maxOccurs="unbounded" type="directorType" xdb:SQLName="DIRECTOR" xdb:SQLCollType="DIRECTOR_VRY"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="listOpinionsType" xdb:SQLType="L_OPINIONS_TYPE">
+        <xsd:sequence>
+            <xsd:element name="opinion" maxOccurs="unbounded" type="opinionType" xdb:SQLName="OPINION" xdb:SQLCollType="AVIS_VRY"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="genreType" xdb:SQLType="GENRE_TYPE">
+        <xsd:sequence>
+            <xsd:element name="idGenre" 
+                        type="xsd:integer"
+                        xdb:SQLName="IDGENRE" 
+                        xdb:SQLType="NUMBER"/>
+            
+            <xsd:element name="name" 
+                        type="nomGenreType"
+                        xdb:SQLName="NOM_GENRE" 
+                        xdb:SQLType="VARCHAR2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <!--Type complexe producteur-->
+    <xsd:complexType name="productionType" xdb:SQLType="PRODUCTIONTYPE">
+        <xsd:sequence>
+            <xsd:element name="idProductionCompany" 
+                        type="xsd:integer"
+                        xdb:SQLName="IDPRODUCTION" 
+                        xdb:SQLType="NUMBER"/>
+            
+            <xsd:element name="name" 
+                        type="nomProducteurType"
+                        xdb:SQLName="NAMEPRODUCTION" 
+                        xdb:SQLType="VARCHAR2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <!--Type complexe langue-->
+    <xsd:complexType name="languageType" xdb:SQLType="LANGUAGETYPE">
+        <xsd:sequence>
+            <xsd:element name="ISOSpokenLanguage" 
+                        type="idLangueType"
+                        xdb:SQLName="ISOSPOKENLANGUAGE" 
+                        xdb:SQLType="VARCHAR2"/>
+            
+            <xsd:element name="name" 
+                        type="nomLangueType"
+                        xdb:SQLName="NAMELANGUAGE" 
+                        xdb:SQLType="VARCHAR2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    
+    <!--Type complexe pays-->
+    <xsd:complexType name="countryType" xdb:SQLType="COUNTRYTYPE">
+        <xsd:sequence>
+            <xsd:element name="ISOProductionCountry" 
+                        type="idPaysType"
+                        xdb:SQLName="ISOPRODUCTIONCOUNTRY" 
+                        xdb:SQLType="VARCHAR2"/>
+            
+            <xsd:element name="name" 
+                        type="nomPaysType"
+                        xdb:SQLName="NAMECOUNTRY" 
+                        xdb:SQLType="VARCHAR2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="actorType" xdb:SQLType="ACTORTYPE">
+        <xsd:sequence>
+            <xsd:element name="idActor" 
+                        type="xsd:integer"
+                        xdb:SQLName="IDACTOR" 
+                        xdb:SQLType="NUMBER"/>
+            
+            <xsd:element name="name" 
+                        type="nomActeurType"
+                        xdb:SQLName="NAMEACTOR" 
+                        xdb:SQLType="VARCHAR2"/>
+            
+            <xsd:element name="characterName" 
+                        type="nomRoleActeurType"
+                        xdb:SQLName="CHARACTERNAME" 
+                        xdb:SQLType="VARCHAR2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="directorType" xdb:SQLType="DIRECTORTYPE">
+        <xsd:sequence>
+            <xsd:element name="idDirector" 
+                        type="xsd:integer"
+                        xdb:SQLName="IDDIRECTOR" 
+                        xdb:SQLType="NUMBER"/>
+            
+            <xsd:element name="name" 
+                        type="nomRealisateurType"
+                        xdb:SQLName="NAMEDIRECTOR" 
+                        xdb:SQLType="VARCHAR2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="opinionType" xdb:SQLType="OPINIONTYPE">
+        <xsd:sequence>            
+            <xsd:element name="Quotation" 
+                        type="xsd:integer"
+                        xdb:SQLName="QUOTATION" 
+                        xdb:SQLType="VARCHAR2"/>
+            
+            <xsd:element name="Opinion" 
+                        type="commentaireAvisType"
+                        xdb:SQLName="OPINION" 
+                        xdb:SQLType="VARCHAR2"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:simpleType name="idMovieType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="6"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="titleType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="58"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="originaleTitleType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="59"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="statusType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="15"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="certificationType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="12"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="homepageType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="122"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="taglineType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="172"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="overviewType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="949"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+        <!--Longueur champs noom de genre-->
+    <xsd:simpleType name="nomGenreType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!--Longueur champs nom de producteur-->
+    <xsd:simpleType name="nomProducteurType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="45"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    
+    <!--Longueur id pays-->
+    <xsd:simpleType name="idPaysType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!--Longueur nom pays-->
+    <xsd:simpleType name="nomPaysType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="31"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    
+    <!--Longueur id langue-->
+    <xsd:simpleType name="idLangueType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!--Longueur nom langue-->
+    <xsd:simpleType name="nomLangueType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!--Longueur nom acteur-->
+    <xsd:simpleType name="nomActeurType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="23"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!--Longueur photo acteur-->
+    <xsd:simpleType name="photoActeurType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="32"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--Longueur nom role acteur-->
+    <xsd:simpleType name="nomRoleActeurType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="39"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    
+    <!--Longueur nom realisateur-->
+    <xsd:simpleType name="nomRealisateurType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="23"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!--Longueur photo realisateur-->
+    <xsd:simpleType name="photoRealisateurType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="32"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!--Longueur photo realisateur-->
+    <xsd:simpleType name="commentaireAvisType">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1000"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

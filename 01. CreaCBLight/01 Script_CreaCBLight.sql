@@ -1,0 +1,45 @@
+DROP TABLE Logs;
+DROP TABLE QuotaOpinToAdd;
+DROP TABLE UsersToAdd;
+DROP TABLE QuotationsOpinions;
+DROP TABLE Users;
+
+CREATE TABLE Users
+(
+	idUser VARCHAR2(12) CONSTRAINT PK_Users PRIMARY KEY,
+	LastName VARCHAR2(20) CONSTRAINT NN_Users_LastName NOT NULL,
+	FirstName VARCHAR2(20) CONSTRAINT NN_Users_FirstName NOT NULL,
+	DateOfBirth DATE CONSTRAINT NN_Users_DOB NOT NULL
+);
+
+CREATE TABLE QuotationsOpinions
+(
+	idUser VARCHAR2(12) CONSTRAINT FK_QuotaOpin_Users REFERENCES Users(idUser) ON DELETE CASCADE,
+	idFilm NUMBER(6, 0) CONSTRAINT NN_QuotationsOpinionsIdFilm NOT NULL,
+	Quotation NUMBER(2) CONSTRAINT CK_QuotaOpin_Quotation CHECK(Quotation >= 0 AND Quotation <= 10),
+	Opinion VARCHAR2(100),
+	DateOfPost TIMESTAMP CONSTRAINT NN_QuotaOpin_DateOfPost NOT NULL,
+	Token VARCHAR2(8),
+	CONSTRAINT PK_QuotationsOpinions PRIMARY KEY(idUser, idFilm)
+);
+
+CREATE TABLE UsersToAdd
+(
+	idUser VARCHAR2(12) CONSTRAINT PK_UsersToAdd PRIMARY KEY
+);
+
+CREATE TABLE QuotaOpinToAdd
+(
+	idUser VARCHAR2(12),
+	idFilm NUMBER(6, 0),
+	CONSTRAINT PK_QuotaOpinToAdd PRIMARY KEY(idUser, idFilm)
+);
+
+CREATE TABLE Logs
+(
+	idLogs VARCHAR2(20) CONSTRAINT PKLogs PRIMARY KEY,
+	LogWhen TIMESTAMP CONSTRAINT NN_LogsWhen NOT NULL,
+	ErrorCode VARCHAR2(10),
+	LogWhat VARCHAR2(100) CONSTRAINT NN_LogsWhat NOT NULL, 
+	Logwhere VARCHAR2(100) CONSTRAINT NN_LogsWhere NOT NULL
+);

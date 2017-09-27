@@ -1,0 +1,3 @@
+-- Executer en SYS
+
+GRANT SELECT ON DBA_USERS TO CBB;

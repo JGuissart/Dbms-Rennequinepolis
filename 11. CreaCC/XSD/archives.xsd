@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://xmlns.oracle.com/xdb" version="1.0">
+    <xsd:element name="archives" type="archiveType" xdb:SQLName="ARCHIVES"/>
+    <xsd:complexType name="archiveType">
+        <xsd:sequence>
+            <xsd:element name="idMovie" type="idMovieType" xdb:SQLName="IDMOVIE" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="totalJours" type="xsd:integer" xdb:SQLName="TOTALJOURS" xdb:SQLType="NUMBER"/>
+            <xsd:element name="totalSieges" type="xsd:integer" xdb:SQLName="TOTALSIEGES" xdb:SQLType="NUMBER"/>
+            <xsd:element name="nbrCopies" type="xsd:integer" xdb:SQLName="COPIE" xdb:SQLType="NUMBER"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="idMovieType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="6"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

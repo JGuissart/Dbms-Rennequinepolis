@@ -1,0 +1,7 @@
+CREATE OR REPLACE PACKAGE AlimDW
+IS
+	PROCEDURE Load;
+	PROCEDURE LoadDimensions;
+	--PROCEDURE LoadFaits;
+END;
+/

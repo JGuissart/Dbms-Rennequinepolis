@@ -1,0 +1,11 @@
+@D:\InstallRQS\BackupCB\CBB\ProcedureAutonome_AddLogs
+@D:\InstallRQS\RestoreCB\RestoreCB_PackageSpecification
+@D:\InstallRQS\RestoreCB\RestoreCB_PackageBody
+@D:\InstallRQS\BackupCB\CBB\BackupCB_PackageSpecification
+@D:\InstallRQS\BackupCB\CBB\BackupCB_PackageBody
+@D:\InstallRQS\RechFilm\CBB\type_array
+@D:\InstallRQS\RestoreCB\Trigger_ReplicationCotesAvis
+@D:\InstallRQS\RechFilm\CBB\RechFilm_PackageSpecification
+@D:\InstallRQS\RechFilm\CBB\RechFilm_PackageBody
+@D:\InstallRQS\EvalFilm\CBB\EvalFilm_PackageSpecification
+@D:\InstallRQS\EvalFilm\CBB\EvalFilm_PackageBody

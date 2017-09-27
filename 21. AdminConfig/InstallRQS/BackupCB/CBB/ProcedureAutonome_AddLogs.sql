@@ -1,0 +1,15 @@
+CREATE OR REPLACE PROCEDURE AddLogs(P_WHAT Logs.LogWhat%TYPE, P_WHERE Logs.LogWhere%TYPE, P_ERRORCODE Logs.ErrorCode%TYPE) AS
+	PRAGMA AUTONOMOUS_TRANSACTION;
+	E_ParamaterNull EXCEPTION;
+	BEGIN
+		INSERT INTO Logs VALUES (seqLogs.NextVal, CURRENT_DATE, P_ERRORCODE, P_WHAT, P_WHERE);
+		COMMIT;
+	EXCEPTION
+		WHEN E_ParamaterNull THEN
+			AddLogs('Parametre recu null', 'AddLogs', '-20001');
+			COMMIT;
+		WHEN OTHERS THEN
+			AddLogs('OTHERS : ' || SQLERRM, 'AddLogs', SQLCODE);
+			COMMIT; 
+END AddLogs;
+/

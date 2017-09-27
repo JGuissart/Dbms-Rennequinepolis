@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://xmlns.oracle.com/xdb" version="1.0">
+    <xsd:element name="projections" type="projectionType" xdb:SQLName="PROJECTIONS"/>
+    <xsd:complexType name="projectionType">
+        <xsd:sequence>
+            <xsd:element name="idMovie" type="idMovieType" xdb:SQLName="IDMOVIE" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="numCopy" type="xsd:integer" xdb:SQLName="NUMCOPY" xdb:SQLType="NUMBER"/>
+            <xsd:element name="debut" type="debutType" xdb:SQLName="DEBUT" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="fin" type="finType" xdb:SQLName="FIN" xdb:SQLType="VARCHAR2"/>
+            <xsd:element name="idSalle" type="xsd:integer" xdb:SQLName="IDSALLE" xdb:SQLType="NUMBER"/>
+            <xsd:element name="nbrSpectateurs" type="xsd:integer" xdb:SQLName="SPECTATEURS" xdb:SQLType="NUMBER"/>
+            <xsd:element name="nbrsiege" type="xsd:integer" xdb:SQLName="SIEGE" xdb:SQLType="NUMBER"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="idMovieType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="6"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="debutType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="finType">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

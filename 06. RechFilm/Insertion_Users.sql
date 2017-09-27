@@ -1,0 +1,11 @@
+INSERT INTO Users (Login, Password, LastName, FirstName, DateOfBirth) VALUES('julien','guissart','Guissart', 'Julien', TO_DATE('06/05/1992', 'dd/mm/yyyy'));
+INSERT INTO Users (Login, Password, LastName, FirstName, DateOfBirth) VALUES('adrien','desart','Desart', 'Adrien', TO_DATE('24/03/1993', 'dd/mm/yyyy'));
+INSERT INTO Users (Login, Password, LastName, FirstName, DateOfBirth) VALUES('erwan','flohic','Flohic', 'Erwan', TO_DATE('07/09/1994', 'dd/mm/yyyy'));
+INSERT INTO Users (Login, Password, LastName, FirstName, DateOfBirth) VALUES('thibault','boclinville','Boclinville', 'Thibault', TO_DATE('02/06/1994', 'dd/mm/yyyy'));
+INSERT INTO Users (Login, Password, LastName, FirstName, DateOfBirth) VALUES('pierre','clotuche','Clotuche', 'Pierre', TO_DATE('15/08/1994', 'dd/mm/yyyy'));
+INSERT INTO Users (Login, Password, LastName, FirstName, DateOfBirth) VALUES('oceane','seel','Seel', 'Oceane', TO_DATE('18/11/1994', 'dd/mm/yyyy'));
+INSERT INTO Users (Login, Password, LastName, FirstName, DateOfBirth) VALUES('timon','krzewski','Krzewski', 'Timon', TO_DATE('30/06/1994', 'dd/mm/yyyy'));
+INSERT INTO Users (Login, Password, LastName, FirstName, DateOfBirth) VALUES('nicolas','vanderlinden','Van der Linden', 'Nicolas', TO_DATE('25/12/1993', 'dd/mm/yyyy'));
+INSERT INTO Users (Login, Password, LastName, FirstName, DateOfBirth) VALUES('arnaud','cremades','Cremades', 'Arnaud', TO_DATE('29/02/1992', 'dd/mm/yyyy'));
+INSERT INTO Users (Login, Password, LastName, FirstName, DateOfBirth) VALUES('jerome','fink','Fink', 'Jerome', TO_DATE('27/06/1994', 'dd/mm/yyyy'));
+COMMIT;

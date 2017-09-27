@@ -1,0 +1,11 @@
+INSERT INTO QuotationsOpinions (Quotation, Opinion, DateOfPost, idUser, idFilm) VALUES(10, 'TERRIBLE !!!!', CURRENT_DATE, '920506GUIJUL', 100);
+INSERT INTO QuotationsOpinions (Quotation, Opinion, DateOfPost, idUser, idFilm) VALUES(9, 'Vraiment bien', CURRENT_DATE, '930324DESADR', 200);
+INSERT INTO QuotationsOpinions (Quotation, Opinion, DateOfPost, idUser, idFilm) VALUES(8, 'Bon film', CURRENT_DATE, '940907FLOERW', 300);
+INSERT INTO QuotationsOpinions (Quotation, Opinion, DateOfPost, idUser, idFilm) VALUES(7, 'Plutôt bon comme film !', CURRENT_DATE, '940602BOCTHI', 400);
+INSERT INTO QuotationsOpinions (Quotation, Opinion, DateOfPost, idUser, idFilm) VALUES(6, 'Pas mal', CURRENT_DATE, '940815CLOPIE', 500);
+INSERT INTO QuotationsOpinions (Quotation, Opinion, DateOfPost, idUser, idFilm) VALUES(5, 'Moyenne tout juste', CURRENT_DATE, '941118SEEOCE', 600);
+INSERT INTO QuotationsOpinions (Quotation, Opinion, DateOfPost, idUser, idFilm) VALUES(4, 'Bof', CURRENT_DATE, '940630KRZTIM', 700);
+INSERT INTO QuotationsOpinions (Quotation, Opinion, DateOfPost, idUser, idFilm) VALUES(3, NULL, CURRENT_DATE, '931225VANNIC', 800);
+INSERT INTO QuotationsOpinions (Quotation, Opinion, DateOfPost, idUser, idFilm) VALUES(2, NULL, CURRENT_DATE, '920229CREARN', 900);
+INSERT INTO QuotationsOpinions (Quotation, Opinion, DateOfPost, idUser, idFilm) VALUES(1, NULL, CURRENT_DATE, '940627FINJER', 1000);
+COMMIT;
